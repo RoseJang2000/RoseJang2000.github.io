@@ -2,6 +2,7 @@
 layout: single
 title: var, let, const
 tags: [JavaScript]
+categories: JavaScript
 ---
 
 <img src='../images/js-thumbnail.png'>

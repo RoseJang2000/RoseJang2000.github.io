@@ -2,6 +2,7 @@
 layout: single
 title: 원시 값과 참조 값
 tags: [JavaScript, type]
+categories: JavaScript
 ---
 
 <img src='../images/js-thumbnail.png'>

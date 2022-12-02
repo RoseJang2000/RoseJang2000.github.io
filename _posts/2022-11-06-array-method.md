@@ -2,6 +2,7 @@
 layout: single
 title: 배열 메서드 (Array Method)
 tags: [JavaScript, array, method]
+categories: JavaScript
 ---
 
 <img src='../images/js-thumbnail.png'>

@@ -2,6 +2,7 @@
 layout: single
 title: TextContent와 innerText, innerHTML
 tags: [JavaScript, DOM]
+categories: JavaScript
 ---
 
 <img src='../images/js-thumbnail.png'>
