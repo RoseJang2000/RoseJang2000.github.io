@@ -5,8 +5,6 @@ tags: [JavaScript, DOM]
 categories: JavaScript
 ---
 
-<img src='../images/js-thumbnail.png'>
-
 
 오늘 간단한 웹앱 만들기(계산기) 과제를 수행하며 `textContent` 프로퍼티를 굉장히 많이 사용했다. 그래서 이 `textContent`와 비슷한 기능을 가진 `innerText`, `innerHTML` 이 세가지 프로퍼티의 기능과 특징, 차이점에 대해 블로깅해보려고 한다 🧐
 

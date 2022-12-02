@@ -5,8 +5,6 @@ tags: [JavaScript, type]
 categories: JavaScript
 ---
 
-<img src='../images/js-thumbnail.png'>
-
 >자바스크립트가 제공하는 데이터 타입은 크게 `원시 타입(primitive type)`과 `참조 타입(reference type)`으로 구분할 수 있다.
 
 <br/><hr/>

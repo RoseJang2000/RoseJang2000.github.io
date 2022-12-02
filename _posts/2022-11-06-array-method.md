@@ -5,8 +5,6 @@ tags: [JavaScript, array, method]
 categories: JavaScript
 ---
 
-<img src='../images/js-thumbnail.png'>
-
 ### 배열 메서드
 
 >배열은 사용 빈도가 높은 자료구조이므로 `배열 메서드`의 사용법을 잘 알아둘 필요가 있다.
