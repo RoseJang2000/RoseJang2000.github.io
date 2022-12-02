@@ -1,9 +1,13 @@
 ---
 layout: single
 title: var, let, const
+tags: [JavaScript]
 ---
 
+<img src='../images/js-thumbnail.png'>
+
 # var 키워드
+
 >ES5까지는 변수를 선언할 수 있는 유일한 키워드였지만, 여러 단점이 있어 **`ES6`부터는 사용을 지양한다.**
 
 ## 특징

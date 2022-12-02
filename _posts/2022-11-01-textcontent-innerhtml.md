@@ -1,7 +1,7 @@
 ---
 layout: single
 title: TextContent와 innerText, innerHTML
-image: ../images/js-thumbnail.png
+tags: [JavaScript, DOM]
 ---
 
 <img src='../images/js-thumbnail.png'>
