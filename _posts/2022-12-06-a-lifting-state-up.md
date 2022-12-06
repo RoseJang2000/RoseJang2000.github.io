@@ -25,7 +25,7 @@ categories: React
 
 상태 변경 함수 `handleChangeValue`를 props로 부모 컴포넌트로부터 자식 컴포넌트에게 전달한다.
 
-```javascript
+```jsx
 import React, { useState } from "react";
 
 export default function ParentComponent() {
@@ -46,7 +46,7 @@ export default function ParentComponent() {
 
 `<ChildComponent>`는 마치 고차 함수가 인자로 받은 함수를 실행하듯, props로 전달받은 함수를 컴포넌트에서 실행할 수 있게 된다.
 
-```javascript
+```jsx
 function ChildComponent({handleButtonClick}) {
   const handleClick = () => {
     handleButtonClick();
@@ -60,7 +60,7 @@ function ChildComponent({handleButtonClick}) {
 
 필요에 따라 설정할 값을 콜백 함수의 인자로 넘길 수도 있다.
 
-```javascript
+```jsx
 function ParentComponent() {
   const [value, setValue] = useState("원래 값");
 
