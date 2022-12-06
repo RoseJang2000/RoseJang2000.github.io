@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 순수 함수 (Pure Function)
+title: [JavaScript] 순수 함수 (Pure Function)
 tags: [JavaScript, function]
 categories: JavaScript
 ---
