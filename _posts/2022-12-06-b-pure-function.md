@@ -1,9 +1,31 @@
 ---
 layout: single
-title: 순수 함수 (Pure Function)
+title: 순수 함수(Pure Function)와 Side effect
 tags: [JavaScript, function]
 categories: JavaScript
 ---
+
+<br/>
+
+## 👉 Side Effect (부수 효과)
+
+함수 내에서 어떤 구현이 함수 외부에 영향을 끼치는 경우, 해당 함수는 **Side Effect**가 있다고 이야기한다. <br/>
+
+React에서는 컴포넌트 내에서 `fetch`를 사용해 API 정보를 가져오거나 이벤트를 활용해 DOM을 직접 조작할 때 **Side Effect**가 발생했다고 말한다.
+
+<br/>
+
+아래는 전역변수 `foo`를 `bar`라는 함수를 수정하는 예제이다.
+
+```javascript
+let foo = 'hello';
+
+function bar() {
+  foo = 'world';
+}
+
+bar();	// bar는 Side Effect를 발생시킨다.
+```
 
 <br/>
 
@@ -68,6 +90,7 @@ Math.random(); // => 0.3550692005082965
 
 - 순수 함수를 이용하여 구현할 수 있는 프로그램이라면, 순수 함수를 사용하는 것을 권장한다.
   순수 함수는 독립성이 있고, 리팩토링 하거나 다시 재구성하기도 쉽다.
+- 순수함수는 함수 body 내에 있는 코드만 점검하면 되기 때문에 간결하게 코드를 작성하고 사고하는데 도움이 된다.
 - 함수에 return 값이 존재하지 않는다는 것은 Side Effect를 유발한다는 것을 나타낸다.
 
 <br/>
