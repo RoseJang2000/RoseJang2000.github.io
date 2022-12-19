@@ -1,7 +1,7 @@
 ---
 layout: single
-title: 반응형 웹(Responsive Web) 이란? 
-categoties: HTML/CSS
+title: 반응형 웹(Responsive Web) 이란?
+categories: Web
 tags: [CSS, Web, Responsive Web]
 ---
 
