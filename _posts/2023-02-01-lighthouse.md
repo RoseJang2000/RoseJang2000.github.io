@@ -60,3 +60,9 @@ WebM 비디오는 MP4 비디오보다 훨씬 작지만 모든 브라우저가 We
 FFmpeg를 사용하여 `my-animation.gif`를 WebM 비디오로 변환하려면 다음 명령을 실행하면 된다.<br/>
 
 `ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm`
+
+### Minify JavaScript
+
+사용하지 않는 자바스크립트 코드를 삭제하거나 필수적이 아닌 whitespace를 없애는 것은 자바스크립트 코드를 최적화 시키는데 도움을 줄 수 있다. 그리고 최적화된 JavaScript코드는 코드를 parse하는 시간과 payload의 크기를 줄일 수 있다.<br/>
+
+리액트의 경우, npm run build로 코드가 자동으로 최적화 된다면, production 모드로 빌드를 하고 있는지 꼭 확인해야 한다.
