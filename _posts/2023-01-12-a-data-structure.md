@@ -2,7 +2,7 @@
 layout: single
 title: 자료구조 기초 (Data Structure)
 tags: [자료구조, 알고리즘]
-categories: Data Structure
+categories: Data_Structure
 ---
 
 <br/>
