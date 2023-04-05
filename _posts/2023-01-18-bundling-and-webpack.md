@@ -3,6 +3,8 @@ layout: single
 title: 번들링과 웹팩
 categories: React
 tags: []
+toc: true
+toc_sticky: true
 ---
 
 <br/>
@@ -89,25 +91,25 @@ Webpack이 없다면 각 자원들을 일일히 서버에 요청해 얻어와야
 // webpack의 config 파일 예시
 
 module.exports = {
-  target: ['web', 'es5'],
-  entry: './src/script.js',
+  target: ["web", "es5"],
+  entry: "./src/script.js",
   output: {
-    path: path.resolve(__dirname, 'docs'),
-    filename: 'app.bundle.js',
+    path: path.resolve(__dirname, "docs"),
+    filename: "app.bundle.js",
     clean: true,
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
         exclude: /node_modules/,
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src', 'index.html'),
+      template: path.resolve(__dirname, "src", "index.html"),
     }),
     new MiniCssExtractPlugin(),
   ],
@@ -123,7 +125,7 @@ Webpack은 다양한 환경과 target을 컴파일한다. target의 기본 값�
 
 ```javascript
 module.exports = {
-  target: ['web', 'es5'],
+  target: ["web", "es5"],
 };
 ```
 

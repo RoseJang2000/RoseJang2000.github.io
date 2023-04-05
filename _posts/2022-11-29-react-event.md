@@ -3,9 +3,9 @@ layout: single
 title: React 이벤트 처리
 tags: [React, event]
 categories: React
+toc: true
+toc_sticky: true
 ---
-
-
 
 # React 이벤트 처리
 
@@ -35,19 +35,19 @@ Ex)
 
 ```jsx
 function NameForm() {
-    const [name, setName] = useState("");
-    
-    const hanndleChange = (e) => {
-        setName(e.target.value);
-    }
+  const [name, setName] = useState("");
 
-    return (
-        <div>
-            <input type="text" value={name} onChange={handdleChange}></input>
-            <h1>{name}</h1>
-        </div>
-    )
-};
+  const hanndleChange = (e) => {
+    setName(e.target.value);
+  };
+
+  return (
+    <div>
+      <input type="text" value={name} onChange={handdleChange}></input>
+      <h1>{name}</h1>
+    </div>
+  );
+}
 ```
 
 ## onClick
@@ -56,20 +56,20 @@ function NameForm() {
 
 ```jsx
 function NameForm() {
-    const [name, setName] = useState("");
-    
-    const hanndleChange = (e) => {
-        setName(e.target.value);
-    }
+  const [name, setName] = useState("");
 
-    return (
-        <div>
-            <input type="text" value={name} onChange={handdleChange}></input>
-            <button onClick={() => alert(name)}>Button</button>
-            <h1>{name}</h1>
-        </div>
-    )
-};
+  const hanndleChange = (e) => {
+    setName(e.target.value);
+  };
+
+  return (
+    <div>
+      <input type="text" value={name} onChange={handdleChange}></input>
+      <button onClick={() => alert(name)}>Button</button>
+      <h1>{name}</h1>
+    </div>
+  );
+}
 ```
 
 > onClick 이벤트에 alert(name) 함수를 바로 호출하면 컴포넌트가 렌더링 될 때 함수 자체가 아닌 함수 호출의 결과가 onClick에 적용된다. 때문에 버튼을 클릭할 때가 아닌, 컴포넌트가 렌더링 될 때 alert가 실행되고 그 결과인 undefined가 적용되어 클릭 이벤트가 나타나지 않는다. 그래서 위와 같이 함수를 정의해야 한다.

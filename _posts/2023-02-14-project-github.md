@@ -3,6 +3,8 @@ layout: single
 title: Project Github
 categories: Team_Project
 tags: [project]
+toc: true
+toc_sticky: true
 ---
 
 <br/>

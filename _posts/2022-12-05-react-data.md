@@ -3,6 +3,8 @@ layout: single
 title: React 데이터 흐름
 tags: [React]
 categories: React
+toc: true
+toc_sticky: true
 ---
 
 <br/>
@@ -24,8 +26,6 @@ React 개발 방식의 가장 큰 특징은 페이지 단위가 아닌 컴포넌
 즉, 데이터를 전달하는 주체는 부모 컴포넌트가 된다. 이는 데이터 흐름 방향이 `하향식(top-down)`임을 의미한다.<br/>
 
 `단방향 데이터 흐름(one-way data flow)`라는 키워드가 React를 대표하는 설명 중 하나일 정도로 이 원칙은 매우 중요하다. 또한 컴포넌트는 props를 통해 전달받은 데이터가 어디서 왔는지 전혀 알지 못한다.<br/>
-
-
 
 <hr/>
 

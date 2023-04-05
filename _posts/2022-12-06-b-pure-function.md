@@ -3,6 +3,8 @@ layout: single
 title: 순수 함수(Pure Function)와 Side effect
 tags: [JavaScript, function]
 categories: JavaScript
+toc: true
+toc_sticky: true
 ---
 
 <br/>
@@ -18,28 +20,27 @@ React에서는 컴포넌트 내에서 `fetch`를 사용해 API 정보를 가져�
 아래는 전역변수 `foo`를 `bar`라는 함수를 수정하는 예제이다.
 
 ```javascript
-let foo = 'hello';
+let foo = "hello";
 
 function bar() {
-  foo = 'world';
+  foo = "world";
 }
 
-bar();	// bar는 Side Effect를 발생시킨다.
+bar(); // bar는 Side Effect를 발생시킨다.
 ```
 
 <br/>
 
 ## 👉 Pure Function (순수 함수)
 
-###  🧐 순수 함수란?
+### 🧐 순수 함수란?
 
-> 순수함수란, 오직 함수의 입력만이 함수의 결과에 영향을 주는 함수를 의미한다. 
->
+> 순수함수란, 오직 함수의 입력만이 함수의 결과에 영향을 주는 함수를 의미한다.
 
 - 함수의 입력이 아닌 다른 값이 함수의 결과에 영향을 미치는 경우, 순수 함수라고 부를 수 없다.
 - 순수 함수는 입력으로 전달 된 값을 해치지 않는다.
 - 같은 입력에 대해 같은 결과를 return한다.
-- 함수 외부의 데이터나 함수에 전달된 데이터를 변경하지 않는다. 
+- 함수 외부의 데이터나 함수에 전달된 데이터를 변경하지 않는다.
   (Side Effect를 초래하지 않는다. 즉, 어떠한 외부 상태도 변환하지 않는다.)
 
 <br/>
@@ -49,7 +50,7 @@ function Upper(str) {
   return str.toUpperCase(); // toUpperCase 메서드는 원본을 수정하지 않는다. (Immutable)
 }
 
-upper('hello');	//'HELLO'
+upper("hello"); //'HELLO'
 ```
 
 **순수 함수**에는 네트워크 요청과 같은 Side Effect가 없다. **순수 함수**의 특징 중 하나는, 어떠한 전달 인자가 주어질 경우 항상 똑같은 값이 리턴됨을 보장한다는 것이다. 그래서 예측 가능한 함수이기도 하다.
@@ -65,10 +66,10 @@ upper('hello');	//'HELLO'
 예를 들어 아래와 같은 함수를 정의했다고 생각해 보자.
 
 ```javascript
-const double = x => x * 2;
+const double = (x) => x * 2;
 ```
 
-위에서 정의된  `double` 함수는 순수 함수이다. `double(5)`는 얼마나 많이 호출하든 상관 없이 언제나 `10`이라는 동일한 결과를 출력할 것이다. 하지만 `Math.random()`의 경우에는 다르다.
+위에서 정의된 `double` 함수는 순수 함수이다. `double(5)`는 얼마나 많이 호출하든 상관 없이 언제나 `10`이라는 동일한 결과를 출력할 것이다. 하지만 `Math.random()`의 경우에는 다르다.
 
 ```javascript
 Math.random(); // => 0.4011148700956255

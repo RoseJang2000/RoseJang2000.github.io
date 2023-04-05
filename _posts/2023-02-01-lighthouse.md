@@ -2,6 +2,8 @@
 layout: single
 title: Google Lighthouse
 Categories: Web
+toc: true
+toc_sticky: true
 ---
 
 <br/>

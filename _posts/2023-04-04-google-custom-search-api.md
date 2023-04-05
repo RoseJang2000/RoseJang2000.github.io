@@ -3,6 +3,8 @@ layout: single
 title: 맨체스터 시티 정보 사이트 만들기 - Google Custom Search API 사용하기
 categories: Solo_Project
 tags: [project]
+toc: true
+toc_sticky: true
 ---
 
 <br/>

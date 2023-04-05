@@ -3,6 +3,8 @@ layout: single
 categories: TypeScript
 tags: [typescript, type]
 title: \[TypeScript\] any, unknown, void, never
+toc: true
+toc_sticky: true
 ---
 
 <br/>
@@ -28,14 +30,14 @@ let unknownA: unknown;
 
 let examB = unknownA + 1; // 경고
 
-if (typeof unknownA === 'number') {
+if (typeof unknownA === "number") {
   // 이 범위 안에서는 unknownA가 number이기 때문에 아래 작업을 허용함.
   let examB = unknownA + 1;
 }
 
 unknownA.toUpperCase(); //경고
 
-if (typeof unknownA === 'string') {
+if (typeof unknownA === "string") {
   // 이 범위 안에서는 unknownA가 string이기 때문에 아래 작업을 허용함.
   unknownA.toUpperCase();
 }
@@ -48,7 +50,7 @@ if (typeof unknownA === 'string') {
 ```typescript
 // Typescript는 이 함수가 아무것도 return하지 않는다는 것을 자동으로 인식.
 function hello() {
-  console.log('hello');
+  console.log("hello");
 }
 
 const funcA = hello();
@@ -61,13 +63,13 @@ funcA.toUpperCase();
 
 ```typescript
 function helloWorld(): never {
-  throw new Error('hello');
+  throw new Error("hello");
 }
 
 function hello2(name: string | number) {
-  if (typeof name === 'string') {
+  if (typeof name === "string") {
     return name.toUpperCase();
-  } else if (typeof name === 'number') {
+  } else if (typeof name === "number") {
     return name + 1;
   } else {
     // 타입이 올바르게 들어왔다면, 이 스코프 내의 코드는 절대 실행되지 않아야 한다

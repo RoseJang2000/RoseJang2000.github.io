@@ -3,6 +3,8 @@ layout: single
 title: \[Pre-Project\] 리액트 파일 절대경로 설정과 eslint 오류
 categories: Team_Project
 tags: [project, error]
+toc: true
+toc_sticky: true
 ---
 
 <br/>

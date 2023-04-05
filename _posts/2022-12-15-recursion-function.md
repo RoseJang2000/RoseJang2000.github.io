@@ -3,6 +3,8 @@ layout: single
 title: 재귀 함수 (Recursion Function)
 tags: [function, JavaScript]
 categories: JavaScript
+toc: true
+toc_sticky: true
 ---
 
 <br/>
@@ -16,10 +18,10 @@ categories: JavaScript
 재귀의 코드 예시
 
 ```js
-function recursion () {
-  console.log('This is')
-  console.log('recursion!')
-  recursion()
+function recursion() {
+  console.log("This is");
+  console.log("recursion!");
+  recursion();
 }
 ```
 
@@ -67,7 +69,7 @@ arrSum([5]) === 5 + arrSum([])
 #### 3. 문제 해결하기
 
 ```js
-function arrSum (arr) {
+function arrSum(arr) {
   // 빈 배열을 받았을 때 0을 리턴하는 조건문
   // 가장 작은 문제를 해결하는 코드 & 재귀를 멈추는 코드
   if (arr.length === 0) {
@@ -90,26 +92,25 @@ function arrSum (arr) {
 
 ```js
 for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-        for (let k = 0; k < n; k++) {
-            for (let l = 0; l < n; l++) {
-                for (let m = 0; m < n; m++) {
-                    for (let n = 0; n < n; n++) {
-                        for (let o = 0; o < n; o++) {
-                            for (let p = 0; p < n; p++) {
-                                // do something
-                                someFunc(i, j, k, l, m, n, o, p);
-                           }
-                        }
-                    }
-                }
+  for (let j = 0; j < n; j++) {
+    for (let k = 0; k < n; k++) {
+      for (let l = 0; l < n; l++) {
+        for (let m = 0; m < n; m++) {
+          for (let n = 0; n < n; n++) {
+            for (let o = 0; o < n; o++) {
+              for (let p = 0; p < n; p++) {
+                // do something
+                someFunc(i, j, k, l, m, n, o, p);
+              }
             }
+          }
         }
+      }
     }
- }
+  }
+}
 ```
 
 모든 재귀 함수는 반복문으로 표현할 수 있다. 그러나 재귀를 적용할 수 있는 대부분의 경우에는, 재귀를 적용한 코드가 더욱 간결하고 이해하기 쉽다.
 
 <br/>
-

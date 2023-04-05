@@ -3,6 +3,8 @@ layout: single
 title: Single Page Application & React Router
 tags: [React, SPA, React Router]
 categories: React
+toc: true
+toc_sticky: true
 ---
 
 # 🔘 SPA
@@ -22,7 +24,6 @@ SPA는 Menu와 Footer 등과 같이 페이지 전환 전후에 중복되는 부�
 <aside>
 💡 서버로부터 완전한 새로운 페이지를 불러오지 않고 페이지 갱신에 필요한 데이터만 받아 그 정보를 기준으로 현재의 페이지를 업데이트 함으로써 사용자와 소통하는 웹 어플리케이션이나 웹 사이트.
 
-
 </aside>
 
 ### 👍 SPA의 장점
@@ -34,7 +35,7 @@ SPA는 Menu와 Footer 등과 같이 페이지 전환 전후에 중복되는 부�
 
 ### 👎 SPA의 단점
 
-- SPA의 경우 JavaScript 파일의 크기가 크다. 
+- SPA의 경우 JavaScript 파일의 크기가 크다.
   때문에 이 JavaScript 파일을 기다리는 시간으로 인해 첫 화면 로딩 시간이 길어진다.
 - 검색 엔진 최적화(SEO)가 좋지 않다. 구글이나 네이버 같은 검색 엔진은 HTML 파일에 있는 자료를 분석하는 방식으로 검색 기능을 구동하는데, SPA의 경우 HTML 파일은 별다른 자료가 없기 때문에 검색 엔진이 적절히 동작하지 못한다.
 
@@ -46,7 +47,7 @@ SPA는 Menu와 Footer 등과 같이 페이지 전환 전후에 중복되는 부�
 이 때문에 검색 엔진 최적화에 대한 대응책을 따로 마련해야 한고, 더불에 앱 안에서 브라우저의 앞으로 가기/뒤로 가기 등의 상태도 관리해야 하기 때문에 개발의 복잡도가 더욱 늘어난다.
 (다만, SPA에서도 검색 엔진 최적화에 대응할 수 있도록 검색 엔진이 발전하고 있어 이 단점은 점차 사라지고 있는 추세이다.)
 
-> 
+>
 
 # 🔘 Routing & React Router
 
@@ -56,7 +57,7 @@ Twitter와 같은 SPA 페이지를 만들 때, 메인 트윗 모음 페이지, �
 
 ![001](/images/2022-11-28-react-spa-router/001.png)
 
-이 화면에 따라 **주소**도 달라지게 되는데, 이렇게 **다른 주소에 따라 다른 뷰를 보여주는 과정을 “경로에 따라 변경한다.”라는 의미로 <span style="text-decoration: underline;">라우팅(Routing)</span> 이라고 한다.
+이 화면에 따라 **주소**도 달라지게 되는데, 이렇게 \*\*다른 주소에 따라 다른 뷰를 보여주는 과정을 “경로에 따라 변경한다.”라는 의미로 <span style="text-decoration: underline;">라우팅(Routing)</span> 이라고 한다.
 
 ## 👉 React Router
 
@@ -66,7 +67,7 @@ Twitter와 같은 SPA 페이지를 만들 때, 메인 트윗 모음 페이지, �
 
 React SPA에서는 라우팅을 위해 **React Router**라는 라이브러리를 가장 많이 사용한다.
 
-### ▶️ React Router  주요 컴포넌트
+### ▶️ React Router 주요 컴포넌트
 
 ![003](/images/2022-11-28-react-spa-router/003.png)
 

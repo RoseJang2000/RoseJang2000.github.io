@@ -3,6 +3,8 @@ layout: single
 categories: TypeScript
 tags: [typescript, type]
 title: \[TypeScript\] TypeScript 기본
+toc: true
+toc_sticky: true
 ---
 
 <br/>
@@ -26,7 +28,7 @@ TypeScript는 JavaScript와 거의 동일한 데이터 타입을 지원하며, �
 ```typescript
 let isCaptain: boolean = true;
 isCaptain = false; // ok
-isCaptain = 'Gundogan'; // error | Type 'string' is not assignable to type 'boolean'.
+isCaptain = "Gundogan"; // error | Type 'string' is not assignable to type 'boolean'.
 ```
 
 `isLoading` 변수는 `boolean` 타입으로 지정되었기 때문에, 마지막 라인에서 다음과 같은 에러가 발생한다.<br/>
@@ -44,8 +46,8 @@ let octal: number = 0o744;
 ### 문자열 (String)
 
 ```typescript
-let color: string = 'blue';
-color = 'red';
+let color: string = "blue";
+color = "red";
 ```
 
 ```typescript
@@ -72,7 +74,7 @@ let arr: Array<number> = [1, 2, 3];
 
 ```typescript
 const player: object = {
-  name: 'Kev',
+  name: "Kev",
 };
 ```
 
@@ -89,9 +91,9 @@ const player: {
   position: string;
   age?: number; // 이와 같이 물음표를 붙여주면 속성이 들어오지 않더라도 오류가 발생하지 않는다.
 } = {
-  name: 'Kevin',
+  name: "Kevin",
   backNumber: 17,
-  position: 'midfielder',
+  position: "midfielder",
 };
 ```
 
@@ -121,13 +123,13 @@ type Player = {
 };
 
 const playerKev: Player = {
-  name: 'De Bruyne',
+  name: "De Bruyne",
   backNumber: 17,
-  position: 'Midfielder',
+  position: "Midfielder",
 };
 
 playerKev.age = 31; // ok
-playerKev.team = 'Manchester City'; // error | Property 'team' does not exist on type 'Player'.
+playerKev.team = "Manchester City"; // error | Property 'team' does not exist on type 'Player'.
 ```
 
 ```typescript
@@ -163,9 +165,9 @@ function playerMaker(name: string): Player {
   };
 }
 
-const playerRuben = playerMaker('Dias');
+const playerRuben = playerMaker("Dias");
 playerRuben.backNumber = 3; // ok
-playerRuben.team = 'Man City'; // error | Property 'team' does not exist on type 'Player'.
+playerRuben.team = "Man City"; // error | Property 'team' does not exist on type 'Player'.
 ```
 
 ## 읽기 전용 (readonly)
@@ -187,23 +189,23 @@ function PlayerMaker(name: string, position: string): Player {
   };
 }
 
-const player = playerMaker('Foden', 'Midfielder');
-player.position = 'forward'; // ok
-player.name = 'Haaland'; // error | Cannot assign to 'name' because it is a read-only property.
+const player = playerMaker("Foden", "Midfielder");
+player.position = "forward"; // ok
+player.name = "Haaland"; // error | Cannot assign to 'name' because it is a read-only property.
 ```
 
 ```typescript
-const players: ReadonlyArray<string> = ['De Bruyne', 'Rodri', 'Dias'];
-players.push('Walker'); // error | Property 'push' does not exist on type 'readonly string[]'.
+const players: ReadonlyArray<string> = ["De Bruyne", "Rodri", "Dias"];
+players.push("Walker"); // error | Property 'push' does not exist on type 'readonly string[]'.
 players.splice(0, 1); // error | Property 'splice' does not exist on type 'readonly string[]'. Did you mean 'slice'?
-players[0] = 'Bernardo'; // error | Index signature in type 'readonly string[]' only permits reading.
+players[0] = "Bernardo"; // error | Index signature in type 'readonly string[]' only permits reading.
 ```
 
 ```typescript
-const players: readonly string[] = ['Ake', 'Akanji', 'Laporte'];
-players.push('Alvarez'); // error | Property 'push' does not exist on type 'readonly string[]'.
+const players: readonly string[] = ["Ake", "Akanji", "Laporte"];
+players.push("Alvarez"); // error | Property 'push' does not exist on type 'readonly string[]'.
 players.splice(0, 1); // error | Property 'splice' does not exist on type 'readonly string[]'. Did you mean 'slice'?
-players[0] = 'Grealish'; // error | Index signature in type 'readonly string[]' only permits reading.
+players[0] = "Grealish"; // error | Index signature in type 'readonly string[]' only permits reading.
 ```
 
 ## Tuple
@@ -211,9 +213,9 @@ players[0] = 'Grealish'; // error | Index signature in type 'readonly string[]' 
 튜플은 배열의 길이가 고정되고 각 요소의 타입이 지정되어 있는 배열 형식을 의미한다. 만약 정의하지 않은 타입, 인덱스로 접근할 경우 오류가 발생한다.
 
 ```typescript
-const playerArr: [string, number, boolean] = ['Foden', 47, false];
+const playerArr: [string, number, boolean] = ["Foden", 47, false];
 playerArr[0] = 1; // error | Type 'number' is not assignable to type 'string'.
 
-const playerArr: readonly [string, number, boolean] = ['Foden', 47, false];
+const playerArr: readonly [string, number, boolean] = ["Foden", 47, false];
 playerArr[0] = 1; // error | Cannot assign to '0' because it is a read-only property.
 ```

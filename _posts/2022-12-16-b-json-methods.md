@@ -3,6 +3,8 @@ layout: single
 title: JSON.stringify(), JSON.parse()
 tags: [JSON, method]
 categories: JavaScript
+toc: true
+toc_sticky: true
 ---
 
 <br/>
@@ -17,8 +19,8 @@ JSON의 일반적인 용도는 웹 서버와 데이터를 교환하는 것이다
 
 ```js
 JSON.stringify({ x: 5, y: 6 }); // '{"X":5,"y":6}'
-JSON.stringify([3, 'false', false]) // '[3,"false",false]'
-JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)) // '"2006-01-02T06:04:05.000Z"'
+JSON.stringify([3, "false", false]); // '[3,"false",false]'
+JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)); // '"2006-01-02T06:04:05.000Z"'
 ```
 
 <br/>
@@ -32,36 +34,41 @@ JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)) // '"2006-01-02T06:04:05.000Z"'
 - 열거 불가능한 속성들은 무시된다.
 
 ```js
-JSON.stringify({});                  // '{}'
-JSON.stringify(true);                // 'true'
-JSON.stringify('foo');               // '"foo"'
-JSON.stringify([1, 'false', false]); // '[1,"false",false]'
-JSON.stringify({ x: 5 });            // '{"x":5}'
+JSON.stringify({}); // '{}'
+JSON.stringify(true); // 'true'
+JSON.stringify("foo"); // '"foo"'
+JSON.stringify([1, "false", false]); // '[1,"false",false]'
+JSON.stringify({ x: 5 }); // '{"x":5}'
 
-JSON.stringify(new Date(2006, 0, 2, 15, 4, 5))
+JSON.stringify(new Date(2006, 0, 2, 15, 4, 5));
 // '"2006-01-02T15:04:05.000Z"'
 
 JSON.stringify({ x: 5, y: 6 });
 // '{"x":5,"y":6}' or '{"y":6,"x":5}'
-JSON.stringify([new Number(1), new String('false'), new Boolean(false)]);
+JSON.stringify([new Number(1), new String("false"), new Boolean(false)]);
 // '[1,"false",false]'
 
 // Symbols:
-JSON.stringify({ x: undefined, y: Object, z: Symbol('') });
+JSON.stringify({ x: undefined, y: Object, z: Symbol("") });
 // '{}'
-JSON.stringify({ [Symbol('foo')]: 'foo' });
+JSON.stringify({ [Symbol("foo")]: "foo" });
 // '{}'
-JSON.stringify({ [Symbol.for('foo')]: 'foo' }, [Symbol.for('foo')]);
+JSON.stringify({ [Symbol.for("foo")]: "foo" }, [Symbol.for("foo")]);
 // '{}'
-JSON.stringify({ [Symbol.for('foo')]: 'foo' }, function(k, v) {
-  if (typeof k === 'symbol') {
-    return 'a symbol';
+JSON.stringify({ [Symbol.for("foo")]: "foo" }, function (k, v) {
+  if (typeof k === "symbol") {
+    return "a symbol";
   }
 });
 // '{}'
 
 // Non-enumerable properties:
-JSON.stringify( Object.create(null, { x: { value: 'x', enumerable: false }, y: { value: 'y', enumerable: true } }) );
+JSON.stringify(
+  Object.create(null, {
+    x: { value: "x", enumerable: false },
+    y: { value: "y", enumerable: true },
+  })
+);
 // '{"y":"y"}'
 ```
 
@@ -74,17 +81,17 @@ const message = {
   sender: "김코딩",
   receiver: "박해커",
   message: "해커야 오늘 저녁 같이 먹을래?",
-  createdAt: "2021-01-12 10:10:10"
-}
+  createdAt: "2021-01-12 10:10:10",
+};
 ```
 
 ```js
-let transferableMessage = JSON.stringify(message)
+let transferableMessage = JSON.stringify(message);
 
-console.log(transferableMessage) 
+console.log(transferableMessage);
 // '{"sender":"김코딩","receiver":"박해커","message":"해커야 오늘 저녁 같이 먹을래?","createdAt":"2021-01-12 10:10:10"}'
 
-console.log(typeof(transferableMessage))
+console.log(typeof transferableMessage);
 // 'string'
 ```
 
@@ -105,23 +112,23 @@ const json = '{"result":true,"count":42}';
 const obj = JSON.parse(json);
 
 console.log(obj); // Object { result: true, count: 42}
-console.log(obj.count);	// 42
-console.log(obj.result);	// true
+console.log(obj.count); // 42
+console.log(obj.result); // true
 ```
 
 ```js
-JSON.parse('{}');              // {}
-JSON.parse('true');            // true
-JSON.parse('"foo"');           // "foo"
+JSON.parse("{}"); // {}
+JSON.parse("true"); // true
+JSON.parse('"foo"'); // "foo"
 JSON.parse('[1, 5, "false"]'); // [1, 5, "false"]
-JSON.parse('null');            // null
+JSON.parse("null"); // null
 ```
 
 #### ❌ 후행 쉼표 사용 불가
 
 ```js
-JSON.parse('[1, 2, 3, 4, ]');	//SyntaxError
-JSON.parse('{"foo" : 1, }');	//SyntaxError
+JSON.parse("[1, 2, 3, 4, ]"); //SyntaxError
+JSON.parse('{"foo" : 1, }'); //SyntaxError
 ```
 
 <br/>
@@ -132,7 +139,7 @@ JSON.parse('{"foo" : 1, }');	//SyntaxError
 
 ```js
 // Storing data:
-const myObj = {name: "John", age: 31, city: "New York"};
+const myObj = { name: "John", age: 31, city: "New York" };
 const myJSON = JSON.stringify(myObj);
 localStorage.setItem("testJSON", myJSON);
 
@@ -146,7 +153,7 @@ document.getElementById("demo").innerHTML = obj.name;
 
 ## Reference
 
-[MDN](https://developer.mozilla.org/ko/) :  [JSON.stringify](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify), [JSON.parse()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
+[MDN](https://developer.mozilla.org/ko/) : [JSON.stringify](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify), [JSON.parse()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
 
 [JSON과 메서드](https://ko.javascript.info/json)
 

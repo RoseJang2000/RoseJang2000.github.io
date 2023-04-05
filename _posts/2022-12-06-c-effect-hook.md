@@ -3,6 +3,8 @@ layout: single
 title: Effect Hook
 tags: [React, Hook]
 categories: React
+toc: true
+toc_sticky: true
 ---
 
 <br/>
@@ -14,12 +16,12 @@ categories: React
 ```jsx
 function Singletweet({ writer, body, createdAt }) {
   return (
-  	<div>
-    	<div>{writer}</div>
-    	<div>{createdAt}</div>
-    	<div>{body}</div>
+    <div>
+      <div>{writer}</div>
+      <div>{createdAt}</div>
+      <div>{body}</div>
     </div>
-  )
+  );
 }
 ```
 
@@ -39,23 +41,21 @@ function Singletweet({ writer, body, createdAt }) {
 `useEffect`는 컴포넌트 내에서 Side Effect를 실행할 수 있게 하는 Hook이다.
 
 ```jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function Example() {
   const [count, setCount] = useState(0);
-  
+
   useEffect(() => {
     // 브라우저 API를 이용하여 문서 타이틀을 업데이트
     document.title = `You cliked ${count} times`;
   });
-  
+
   return (
-  	<div>
-    	<p>You clicked {count} times</p>
-			<button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-		</div>
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
   );
 }
 ```
@@ -107,35 +107,35 @@ function Example() {
 ### 예제
 
 ```jsx
-import { useEffect, useState } from 'react';
-import { getProverbs } from './storageUtil';
+import { useEffect, useState } from "react";
+import { getProverbs } from "./storageUtil";
 
 export default function App() {
   const [proverbs, setProverbs] = useState([]);
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState("");
   const [count, setCount] = useState(0);
-  
+
   useEffect(() => {
-    console.log('언제 effect 함수가 불릴까?');
+    console.log("언제 effect 함수가 불릴까?");
     const result = getProverbs(filter);
     setProvervs(result);
   }, [filter]);
-  
+
   const handleChange = (e) => {
     setFilter(e.target.value);
   };
-  
+
   const handleCounterClick = () => {
     setCount(count + 1);
   };
-  
+
   return (
-  	<div className='App'>
-    	필터
-      <input type='text' value={filter} onChange={handleChange} />
+    <div className="App">
+      필터
+      <input type="text" value={filter} onChange={handleChange} />
       <ul>
-      	{provervs.map((prvb, i) => (
-        	<Proverb saying={prvb} key={i} />
+        {provervs.map((prvb, i) => (
+          <Proverb saying={prvb} key={i} />
         ))}
       </ul>
     </div>
@@ -161,10 +161,10 @@ function Proverb({ saying }) {
 
 ```jsx
 useEffect(() => {
-    console.log('언제 effect 함수가 불릴까?');
-    const result = getProverbs(filter);
-    setProvervs(result);
-  }, [filter, count]);
+  console.log("언제 effect 함수가 불릴까?");
+  const result = getProverbs(filter);
+  setProvervs(result);
+}, [filter, count]);
 ```
 
 useEffect의 **종속성 배열 (dependency array)**에 `count`를 추가해주면 `filter` 뿐만 아니라 `count`가 변경될 때에도 useEffect 함수가 실행된다.
@@ -206,4 +206,3 @@ useEffect(() => {
 ↳ ✅ 컴포넌트가 처음 생성될 때만 함수가 실행된다.
 
 <br/>
-

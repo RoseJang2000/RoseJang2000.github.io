@@ -3,6 +3,8 @@ layout: single
 title: State 끌어올리기 (Lifting State Up)
 tags: [React, state]
 categories: React
+toc: true
+toc_sticky: true
 ---
 
 <br/>
@@ -30,16 +32,16 @@ import React, { useState } from "react";
 
 export default function ParentComponent() {
   const [value, setValue] = useState("원래 값");
-  
+
   const handleChangeValue = () => {
     setValue("달라진 값");
-  }
-  
+  };
+
   return (
-  <div>
-    <div>값은 {value} 입니다</div>
-		<ChildComponent handleButtonClick={handleChangeValue} />
-  </div>
+    <div>
+      <div>값은 {value} 입니다</div>
+      <ChildComponent handleButtonClick={handleChangeValue} />
+    </div>
   );
 }
 ```
@@ -47,14 +49,12 @@ export default function ParentComponent() {
 `<ChildComponent>`는 마치 고차 함수가 인자로 받은 함수를 실행하듯, props로 전달받은 함수를 컴포넌트에서 실행할 수 있게 된다.
 
 ```jsx
-function ChildComponent({handleButtonClick}) {
+function ChildComponent({ handleButtonClick }) {
   const handleClick = () => {
     handleButtonClick();
-  }
-  
-  return (
-  	<button onClick={handdleClick}>값 변경</button>
-  )
+  };
+
+  return <button onClick={handdleClick}>값 변경</button>;
 }
 ```
 
@@ -73,12 +73,10 @@ function ParentComponent() {
 
 function ChildComponent({ handleButtonClick }) {
   const handleClick = () => {
-    handleButtonClick('자식 컴포넌트에서 바꾼 값')
-  }
+    handleButtonClick("자식 컴포넌트에서 바꾼 값");
+  };
 
-  return (
-    <button onClick={handleClick}>값 변경</button>
-  )
+  return <button onClick={handleClick}>값 변경</button>;
 }
 ```
 

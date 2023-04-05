@@ -3,9 +3,9 @@ layout: single
 title: React State & Props
 tags: [React, state, props]
 categories: React
+toc: true
+toc_sticky: true
 ---
-
-
 
 ## **학습 목표**
 
@@ -63,7 +63,7 @@ categories: React
 2. props를 이용하여 정의된 값과 속성을 전달한다.
 3. 전달받은 props를 렌더링한다.
 
-- 
+-
 
 ```jsx
 function Parent() {
@@ -71,7 +71,7 @@ function Parent() {
     <div className="parent">
       <h1>I'm the parent</h1>
       <Child text={"I'm the eldest child"} />
-			// Parent 컴포넌트에서 Child 컴포넌트에 props 전달
+      // Parent 컴포넌트에서 Child 컴포넌트에 props 전달
       <Child />
     </div>
   );
@@ -82,7 +82,7 @@ function Child(props) {
   return (
     <div className="child">
       <p>{props.text}</p>
-			// 객체 props의 text 전달받기
+      // 객체 props의 text 전달받기
     </div>
   );
 }
@@ -132,7 +132,7 @@ const Learn = (props) => {
 
 > 애플리케이션의 “상태”
 
-→ Toggle switch, Counter처럼 컴포넌트 내부에서 변할 수 있는 값. 
+→ Toggle switch, Counter처럼 컴포넌트 내부에서 변할 수 있는 값.
 ex) 쇼핑몰 장바구니 체크박스와 같이 **컴포넌트 내에서 변할 수 있는 값, 즉 상태는 React state로 다뤄야 한다.**
 
 ## useState
@@ -151,13 +151,13 @@ const [state 저장 변수, state 갱신 함수] = useState(상태 초기 값);
 
 ```jsx
 function CheckboxExample() {
-	// 1 => useState의 리턴값을 구조 분해 할당
-	const [isChecked, setIsChecked] = useState(false);
-	
-	// 1번 코드를 풀어 쓴 것
-	const stateHookArray = useState(false);
-	const isChecked = stateHookArray[0];
-	const setIsChecked = stateHookArray[1];
+  // 1 => useState의 리턴값을 구조 분해 할당
+  const [isChecked, setIsChecked] = useState(false);
+
+  // 1번 코드를 풀어 쓴 것
+  const stateHookArray = useState(false);
+  const isChecked = stateHookArray[0];
+  const setIsChecked = stateHookArray[1];
 }
 ```
 
@@ -169,7 +169,7 @@ function CheckboxExample() {
 - 이 state 변수에 저장된 값을 사용하려면 JSX 엘리먼트 안에 직접 불러서 사용한다.
 
 ```jsx
-<span>{isChecked ? "Checked!!" : "Unchecked" }</span>
+<span>{isChecked ? "Checked!!" : "Unchecked"}</span>
 ```
 
 ## State 갱신하기
@@ -178,12 +178,11 @@ function CheckboxExample() {
 
 ```jsx
 const handleChecked = (event) => {
-    setIsChecked(event.target.checked);
-  };
+  setIsChecked(event.target.checked);
+};
 ```
 
 ## 주의점
 
 - React 컴포넌트는 state가 변경되면 새롭게 호출되고, 리렌더링 된다.
 - React state는 상태 변경 함수 호출로 변경해야 한다. 강제로 변경을 시도하면, 리렌더링이 되지 않는다거나 state가 제대로 변경되지 않는다.
-
