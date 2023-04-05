@@ -1,7 +1,7 @@
 ---
 layout: single
 title: \[Main-Project\] ScrollToTop 컴포넌트
-Categories: Team_Project
+categories: Team_Project
 tags: [project]
 ---
 
@@ -12,8 +12,8 @@ tags: [project]
 
 ```javascript
 // src/utils/ScrollToTop
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function ScrollToTop() {
   const { pathname } = useLocation();

@@ -1,7 +1,7 @@
 ---
 layout: single
 title: \[Pre-Project\] 리액트 파일 절대경로 설정과 eslint 오류
-Categories: Team_Project
+categories: Team_Project
 tags: [project, error]
 ---
 
@@ -25,8 +25,8 @@ tags: [project, error]
 이렇게 절대경로 설정을 해주면 아래와 같이 import시 경로 앞의 `../`을 생략할 수 있어 파일 경로의 가독성이 좋아진다.
 
 ```javascript
-import Comments from '../../components/Comments'; // 상대경로
-import Comments from 'components/Comments'; // 절대경로
+import Comments from "../../components/Comments"; // 상대경로
+import Comments from "components/Comments"; // 절대경로
 ```
 
 ## ESLint 오류 발생

@@ -1,7 +1,7 @@
 ---
 layout: single
 title: \[Pre-Project\] Error \| Non-interactive elements should not be assigned interactive roles
-Categories: Team_Project
+categories: Team_Project
 tags: [project, error]
 ---
 

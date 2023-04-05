@@ -1,7 +1,7 @@
 ---
 layout: single
 title: \[Main-Project\] useScroll Hook
-Categories: Team_Project
+categories: Team_Project
 tags: [project]
 ---
 
@@ -11,7 +11,7 @@ tags: [project]
 <br/>
 
 ```javascript
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export const useScroll = () => {
   const [scrollY, setScrollY] = useState(window.scrollY);
@@ -21,8 +21,8 @@ export const useScroll = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return scrollY;
