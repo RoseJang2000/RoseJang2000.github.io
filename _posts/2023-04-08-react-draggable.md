@@ -32,8 +32,8 @@ const Terminal = () => {
   const dragRef = useRef<HTMLDivElement>(null);
 
   return (
-    <Draggable nodeRef={dragRef}>
-      <div className="container" ref={dragRef}>
+    <Draggable>
+      <div className="container">
         <div className="bar">bar</div>
       </div>
     </Draggable>
@@ -41,8 +41,7 @@ const Terminal = () => {
 };
 ```
 
-`onDrag`, `onStart`, `onStop` 등의 이벤트도 있지만 나는 디자인, 애니메이션 등 없이 정말 윈도우 창처럼 움직여주기만 하면 됐기때문에 함수는 따로 작성하지 않고 `nodeRef` 속성만 먼저 추가해주었다.<br/>
-드래그되길 원하는 엘리먼트에도 같은 `ref`를 설정해주어야 한다. 해당 코드만 작성해도 문제없이 컴포넌트는 잘 움직인다. 하지만...
+`onDrag`, `onStart`, `onStop` 등의 이벤트도 있지만 나는 디자인, 애니메이션 등 없이 정말 윈도우 창처럼 움직여주기만 하면 됐기때문에 함수는 따로 작성하지 않고 그냥 컴포넌트만 사용해 주었다. 해당 코드만 작성해도 문제없이 컴포넌트는 잘 움직인다. 하지만...
 
 ![](/images/2023-04-08-react-draggable/1.gif)
 
@@ -67,11 +66,10 @@ const Terminal = () => {
 
   return (
     <Draggable
-      nodeRef={dragRef}
       handle=".bar" // "bar" class가 지정된 요소를 handle로 지정
       bounds="body" // body를 벗어나지 못하도록 설정
     >
-      <div className="container" ref={dragRef}>
+      <div className="container">
         <div className="bar">bar</div>
       </div>
     </Draggable>
